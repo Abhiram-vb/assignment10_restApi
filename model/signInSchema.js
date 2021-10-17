@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
-const authSchema = mongoose.Schema({
+const signInSchema = mongoose.Schema({
     "email":{
         type:String,
         required:[true,"enter email"],
@@ -14,11 +14,11 @@ const authSchema = mongoose.Schema({
         minlength:[6,"minimum length is 6"]
     }
 })
-authSchema.pre("save",async function(next){
+signInSchema.pre("save",async function(next){
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password,salt);
     next();
 })
-const login = mongoose.model("authentication",authSchema)
+const signIn = mongoose.model("authentication",signInSchema)
 
-module.exports = login;
+module.exports = signIn;

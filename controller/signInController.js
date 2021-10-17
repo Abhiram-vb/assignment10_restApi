@@ -1,4 +1,4 @@
-const authModel = require("../model/authSchema");
+const authModel = require("../model/signInSchema");
 
 const handelErros = (err)=>{
     let error = {email:"",password:""}
@@ -14,11 +14,8 @@ const handelErros = (err)=>{
     return error;
 }
 
-const loginGet = async(req,resp)=>{
-    resp.send("login page to see login data got to <h3>login/data</h3>")
-}
 
-const loginDataGet = async(req,resp)=>{
+const userAuthData = async(req,resp)=>{
     const data = await authModel.find();
     resp.send(data)
 }
@@ -27,7 +24,7 @@ const siginGet = async(req,resp)=>{
     resp.send("sigin page")
 }
 
-const loginPost = async(req,resp)=>{
+const signInPost = async(req,resp)=>{
     const {email,password} = req.body;
     try{
         const user = await authModel.create({email,password})
@@ -39,4 +36,4 @@ const loginPost = async(req,resp)=>{
     }
 }
 
-module.exports = {loginGet,siginGet,loginPost,loginDataGet}
+module.exports = {siginGet,signInPost,userAuthData}

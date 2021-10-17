@@ -1,40 +1,62 @@
 const userSchema = require('../model/userSchema');
 
-const post_user = async(req,resp)=>{
+const postUser = async(req,resp)=>{
     try{
         const newUser = new userSchema(req.body)
         await newUser.save()
         resp.send(newUser)
-        resp.status(201)
     }
     catch(err){
         console.log(err)
     }
 } 
 
-const get_all_user = async(req,resp)=>{
-    const users = await userSchema.find();
-    resp.send(users)
+const getAllUser = async(req,resp)=>{
+    try{
+        const query = req.query
+        const users = await userSchema.find(query);
+        resp.send(users)
+    }
+    catch(err){
+        console.log(err)
+    }
 }
 
-const get_user_by_Id = async(req,resp)=>{
-    const {id} = req.params
-    const userData = await userSchema.find({_id:id})
-    resp.send(userData)
+const getUserById = async(req,resp)=>{
+    try{
+        const query = req.query
+        const {id} = req.params
+        const queryParams = {...query,_id:id}
+        const userData = await userSchema.find(queryParams)
+        resp.send(userData)
+    }
+    catch(err){
+        console.log(err)
+    }
 }
 
-const delete_user_by_id = async(req,resp)=>{
-    const {id} = req.params;
-    const deleteuser = await userSchema.deleteOne({_id:id})
-    console.log(deleteuser)
-    resp.send("Deleted succesfully")
+const deleteUserByd = async(req,resp)=>{
+    try{
+        const {id} = req.params;
+        await userSchema.deleteOne({_id:id})
+        resp.send("Deleted succesfully")
+    }
+    catch(err){
+        console.log(err)
+    }
+    
 }
 
-const update_user_data = async(req,resp)=>{
-    const {id} = req.params;
-    const data = req.body
-    const updatedData = await userSchema.updateOne({_id:id},data)
-    resp.send(updatedData)
+const updateUserData = async(req,resp)=>{
+    try{
+        const {id} = req.params;
+        const data = req.body
+        const updatedData = await userSchema.updateOne({_id:id},data)
+        resp.send(updatedData)
+    }
+    catch(err){
+        console.log(err)
+    }
 }
 
-module.exports={post_user,get_all_user,get_user_by_Id,delete_user_by_id,update_user_data}
+module.exports={postUser,getAllUser,getUserById,deleteUserByd,updateUserData}

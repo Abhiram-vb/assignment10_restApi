@@ -7,6 +7,8 @@ const categoryRouter = require("./router/categoriesRouter");
 const tagRouter = require('./router/tagRouter');
 const productRouter = require("./router/productRouter");
 const loginRouter = require("./router/logInRouter")
+const cartRouter = require("./router/cartRouter")
+const orderRouter = require("./router/orderRouter")
 
 const app = express();
 app.use(express.json());
@@ -19,6 +21,8 @@ app.use(categoryRouter);
 app.use(tagRouter);
 app.use(productRouter);
 app.use(loginRouter);
+app.use(cartRouter);
+app.use(orderRouter);
 app.get("/",(req,resp)=>{
     resp.send("Welcome to ValueBound")
 })

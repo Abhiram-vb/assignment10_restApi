@@ -11,6 +11,17 @@ const getProducts = async(req,resp)=>{
     }
 }
 
+const getById = async(req,resp)=>{
+    try{
+        const {id} = req.params;
+        const data = await productSchema.find({_id:id});
+        resp.send(data)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
 const postProducts = async(req,resp)=>{
     try{
         const data = req.body;
@@ -46,4 +57,4 @@ const updateProduct = async(req,resp)=>{
     }
 }
 
-module.exports = {getProducts,postProducts,deleteProducts,updateProduct};
+module.exports = {getProducts,postProducts,deleteProducts,updateProduct,getById};

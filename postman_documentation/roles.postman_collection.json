@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "de508796-5005-4a45-906f-dca364fe3edc",
+		"name": "roles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"trainee\",\r\n    \"slug\":\"trainee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/role/616bb43a43cce16e2fcf910f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"role",
+						"616bb43a43cce16e2fcf910f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByQuery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/role?_id=616bb42343cce16e2fcf910d&name=Drupal Engineer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"role"
+					],
+					"query": [
+						{
+							"key": "_id",
+							"value": "616bb42343cce16e2fcf910d"
+						},
+						{
+							"key": "name",
+							"value": "Drupal Engineer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/role/616bb42343cce16e2fcf910d?name=Drupal Engineer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"role",
+						"616bb42343cce16e2fcf910d"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Drupal Engineer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"SOFTWARE DEVELOPER\",\r\n        \"slug\": \"software-developer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/role/6165a3cd978ab399918fea93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"role",
+						"6165a3cd978ab399918fea93"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "054145a9-101f-4843-b54d-76953dad601b",
+		"name": "orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"users_id\":\"A123\",\r\n    \"total_items\":3,\r\n    \"products\":[\"SmartPhone\",\"ClassMate Book\",\"Watch\"],\r\n    \"billing_address\":\"langerHouz near mehidipatnam huderabad\",\r\n    \"shipping_address\":\"house no 123, kodad telangana\",\r\n    \"transaction_status\":\"Success\",\r\n    \"payment_mode\":\"Upi\",\r\n    \"payment_status\":\"Done\",\r\n    \"order_status\":\"Recieved\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/616cf435a74d9fc2ae05d279",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"616cf435a74d9fc2ae05d279"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"users_id\":\"A123\",\r\n    \"total_items\":3,\r\n    \"products\":[\"SmartPhone\",\"ClassMate Book\",\"Watch\"],\r\n    \"billing_address\":\"Hyderabad\",\r\n    \"shipping_address\":\"house no 123, kodad telangana\",\r\n    \"transaction_status\":\"Success\",\r\n    \"payment_mode\":\"Upi\",\r\n    \"payment_status\":\"Done\",\r\n    \"order_status\":\"Recieved\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders/616cf435a74d9fc2ae05d279",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"616cf435a74d9fc2ae05d279"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/616cf389a74d9fc2ae05d275",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"616cf389a74d9fc2ae05d275"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
